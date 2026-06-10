@@ -36,12 +36,12 @@ SalesIQ addresses a core business challenge: generating accurate next-quarter sa
 ## Model Architecture
 
 A **3-stage stacked ensemble** was designed to progressively correct prediction errors:
-- **Stage 1: Random Forest (Primary Forecaster)
-↓ computes residuals
-- **Stage 2: XGBoost (Residual Corrector — learns what RF got wrong)
-↓ RF prediction + XGB correction
-- **Stage 3: Ridge Meta-Learner (Blends RF & XGBoost outputs)
-↓ Final Forecast
+- **Stage 1:** Random Forest (Primary Forecaster)-
+ computes residuals
+- **Stage 2:** XGBoost (Residual Corrector — learns what RF got wrong)-
+ RF prediction + XGB correction
+- **Stage 3:** Ridge Meta-Learner (Blends RF & XGBoost outputs)-
+ Final Forecast
 
 ---
 
@@ -100,10 +100,10 @@ A conversational agent powered by **LLaMA 3 8B (via OpenRouter)** that is pre-lo
   - `"general report"` → Full business summary report
 
 **How it works:**
-- **Context-injected system prompt with real KPIs, chart descriptions, and business rules
-- **Multi-turn conversation memory across the session
-- **Keyword-based report type detection
-- **Model: meta-llama/llama-3-8b-instruct via OpenRouter API
+- Context-injected system prompt with real KPIs, chart descriptions, and business rules
+- Multi-turn conversation memory across the session
+- Keyword-based report type detection
+- Model: meta-llama/llama-3-8b-instruct via OpenRouter API
 
 
 ---
@@ -123,6 +123,7 @@ A conversational agent powered by **LLaMA 3 8B (via OpenRouter)** that is pre-lo
 ---
 
 ## Project Structure
+```text
 SalesIQ/
 ├── notebooks/
 │   ├── 01_eda_and_ml_forecasting.ipynb   # Data cleaning, EDA, feature engineering, stacked model, FY26 Q2 predictions
@@ -133,6 +134,7 @@ SalesIQ/
 │   └── CFL2026_FY26Q2_Predictions.csv    # Final forecasts for all 30 products
 ├── requirements.txt
 └── README.md
+```
 ---
 
 ## Setup & Usage
