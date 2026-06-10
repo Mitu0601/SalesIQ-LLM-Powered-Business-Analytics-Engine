@@ -36,11 +36,11 @@ SalesIQ addresses a core business challenge: generating accurate next-quarter sa
 ## Model Architecture
 
 A **3-stage stacked ensemble** was designed to progressively correct prediction errors:
-Stage 1: Random Forest (Primary Forecaster)
+- **Stage 1: Random Forest (Primary Forecaster)
 ↓ computes residuals
-Stage 2: XGBoost (Residual Corrector — learns what RF got wrong)
+- **Stage 2: XGBoost (Residual Corrector — learns what RF got wrong)
 ↓ RF prediction + XGB correction
-Stage 3: Ridge Meta-Learner (Blends RF & XGBoost outputs)
+- **Stage 3: Ridge Meta-Learner (Blends RF & XGBoost outputs)
 ↓ Final Forecast
 
 ---
@@ -100,12 +100,11 @@ A conversational agent powered by **LLaMA 3 8B (via OpenRouter)** that is pre-lo
   - `"general report"` → Full business summary report
 
 **How it works:**
-```python
-# Context-injected system prompt with real KPIs, chart descriptions, and business rules
-# Multi-turn conversation memory across the session
-# Keyword-based report type detection
-# Model: meta-llama/llama-3-8b-instruct via OpenRouter API
-```
+- **Context-injected system prompt with real KPIs, chart descriptions, and business rules
+- **Multi-turn conversation memory across the session
+- **Keyword-based report type detection
+- **Model: meta-llama/llama-3-8b-instruct via OpenRouter API
+
 
 ---
 
